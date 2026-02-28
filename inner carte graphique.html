@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNER. | Digital Brand Book by Brice JCt.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Pinyon+Script&family=Montserrat:wght@100;300;400;600;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: linear-gradient(135deg, #BF953F 0%, #FCF6BA 30%, #B38728 50%, #FBF5B7 70%, #AA771C 100%);
+            --glass: rgba(15, 15, 15, 0.7);
+            --border: rgba(191, 149, 63, 0.3);
+            --x-unit: 20px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; color: #fff; font-family: 'Montserrat', sans-serif; line-height: 1.6; overflow-x: hidden; }
+
+        /* --- BACKGROUND TECH --- */
+        .bg-mesh {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #111 0%, #000 100%);
+            z-index: -2;
+        }
+        .gold-glow {
+            position: fixed; width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(191, 149, 63, 0.05) 0%, transparent 70%);
+            top: -10vw; right: -10vw; z-index: -1;
+        }
+
+        /* --- NAV MODERNE --- */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 25px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border); z-index: 1000;
+        }
+        .nav-left { font-family: 'Cinzel'; letter-spacing: 5px; color: #BF953F; font-size: 1.2rem; }
+        .nav-right { font-weight: 200; font-size: 0.8rem; letter-spacing: 2px; opacity: 0.8; }
+
+        /* --- HERO SHIMMER EFFECT --- */
+        .hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        
+        .monogramme {
+            font-family: 'Pinyon Script'; font-size: 12rem;
+            background: var(--gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            position: relative; overflow: hidden;
+        }
+
+        .shimmer {
+            position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: skewX(-20deg);
+            animation: shine 4s infinite;
+        }
+        @keyframes shine { 100% { left: 200%; } }
+
+        .brand-name {
+            font-family: 'Cinzel'; font-size: 5rem; letter-spacing: 25px;
+            background: var(--gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            display: flex; align-items: baseline; margin-top: -20px;
+        }
+        .dot { width: 18px; height: 18px; background: var(--gold); border-radius: 50%; margin-left: 15px; }
+
+        /* --- SECTIONS BENTO --- */
+        .container { max-width: 1400px; margin: 0 auto; padding: 100px 5%; }
+        h2 { font-family: 'Cinzel'; font-size: 3rem; margin-bottom: 50px; text-align: center; background: var(--gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 30px; }
+        .card { 
+            grid-column: span 6; background: var(--glass); padding: 50px; border: 1px solid var(--border);
+            border-radius: 30px; backdrop-filter: blur(10px); transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .card:hover { transform: scale(1.02); border-color: #FCF6BA; box-shadow: 0 10px 40px rgba(191, 149, 63, 0.1); }
+        .full { grid-column: span 12; }
+        .third { grid-column: span 4; }
+
+        /* --- TEXTE & DATA --- */
+        h3 { color: #BF953F; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; font-size: 1.4rem; }
+        .data { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .data span:first-child { opacity: 0.5; font-weight: 300; }
+        .data span:last-child { font-weight: 600; color: #fff; }
+
+        .rules-box { border: 2px dashed var(--border); padding: 40px; text-align: center; border-radius: 20px; background: rgba(0,0,0,0.3); }
+        
+        ul { list-style: none; margin-top: 20px; }
+        li { margin-bottom: 18px; padding-left: 30px; position: relative; }
+        li::before { content: "•"; position: absolute; left: 0; color: #BF953F; font-size: 1.8rem; top: -5px; }
+
+        footer { padding: 100px 5%; text-align: center; background: #000; border-top: 1px solid var(--border); }
+        .copy { opacity: 0.3; letter-spacing: 5px; font-family: 'Cinzel'; font-size: 0.9rem; }
+        .brice-sig { margin-top: 25px; font-weight: 200; opacity: 0.7; letter-spacing: 3px; }
+
+        @media (max-width: 900px) { .card, .third { grid-column: span 12; } .brand-name { font-size: 2.5rem; letter-spacing: 10px; } }
+    </style>
+</head>
+<body>
+
+    <div class="bg-mesh"></div>
+    <div class="gold-glow"></div>
+
+    <nav>
+        <div class="nav-left">INNER.</div>
+        <div class="nav-right">DesignWebUi by Brice JCt.</div>
+    </nav>
+
+    <header class="hero">
+        <div class="monogramme">
+            In
+            <div class="shimmer"></div>
+        </div>
+        <h1 class="brand-name">INNER<span class="dot"></span></h1>
+        <p style="margin-top: 40px; font-weight: 100; letter-spacing: 10px; opacity: 0.5;">GUIDELINES 2026 OFFICIAL</p>
+    </header>
+
+    <main class="container">
+        
+        <h2>01. ADN Visuel & Couleur</h2>
+        <div class="bento">
+            <div class="card">
+                <h3>OR FLASH</h3>
+                <div class="data"><span>HEX DIGITAL</span><span>#FFD700</span></div>
+                <div class="data"><span>RVB ÉCRANS</span><span>255, 215, 0</span></div>
+                <div class="data"><span>CMJN PRINT</span><span>C:0 M:20 Y:100 K:0</span></div>
+                <div class="data"><span>PANTONE LUXE</span><span>871 C (Métallique)</span></div>
+                <p style="margin-top: 20px; font-weight: 300;">Couleur unie sans dégradé pour le monogramme et le texte.</p>
+            </div>
+            <div class="card">
+                <h3>NOIR MAT</h3>
+                <div class="data"><span>HEX</span><span>#000000</span></div>
+                <div class="data"><span>NOIR RICHE</span><span>C:60 M:40 Y:40 K:100</span></div>
+                <div class="data"><span>FINITION</span><span>Vernis sélectif mat</span></div>
+                <div class="data"><span>TOUCHER</span><span>Pelliculage Soft Touch</span></div>
+                <p style="margin-top: 20px; font-weight: 300;">Aspect haut de gamme obligatoire pour le prestige.</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 100px;">02. Géométrie & Alignement</h2>
+        <div class="bento">
+            <div class="card full">
+                <div class="rules-box">
+                    <h3 style="margin-bottom: 10px;">Axe Central Vertical</h3>
+                    <p>Le monogramme "IN" et le bloc texte "INNER." doivent être parfaitement centrés.</p>
+                    <div style="font-family: 'Cinzel'; font-size: 2.5rem; margin-top: 30px; letter-spacing: 15px;">
+                        INNER<span class="dot" style="display:inline-block; margin-left:5px;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Le Monogramme "IN"</h3>
+                <ul>
+                    <li>Style signature <strong>Copperplate / English Script</strong>.</li>
+                    <li>Hauteur : <strong>2,5x</strong> supérieure au texte "INNER.".</li>
+                    <li>Inclinaison fixe : Interdiction de modifier l'angle.</li>
+                    <li>Courbes de Bézier parfaites sans cassures.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Le Texte "INNER."</h3>
+                <ul>
+                    <li>Police <strong>Cinzel Bold</strong> (Aspect Romain/Statutaire).</li>
+                    <li>Majuscules obligatoires + Point final de perfection.</li>
+                    <li>Kerning (Espacement) : <strong>+100</strong> obligatoire.</li>
+                    <li>Lissage : Mode "Strong" pour la netteté digitale.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 100px;">03. Normes Techniques & Usine</h2>
+        <div class="bento">
+            <div class="card third">
+                <h3>Zone d'Exclusion</h3>
+                <p>La variable <strong>"X"</strong> est la hauteur du point final.</p>
+                <ul>
+                    <li>Silence min : 1X.</li>
+                    <li>Bords support : 2X.</li>
+                    <li>Aucun texte intrusif.</li>
+                </ul>
+            </div>
+            <div class="card third">
+                <h3>Tailles Minimales</h3>
+                <div class="data"><span>PRINT</span><span>25 mm</span></div>
+                <div class="data"><span>DIGITAL</span><span>120 px</span></div>
+                <p style="margin-top: 15px;">Pour garantir la netteté des empattements.</p>
+            </div>
+            <div class="card third">
+                <h3>Export Qualité</h3>
+                <ul>
+                    <li>Vectoriel .AI / .SVG.</li>
+                    <li>Min. 300 DPI (Physique).</li>
+                    <li>PNG 24-bit (Anti-bruit).</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 100px;">04. Conseils Supports</h2>
+        <div class="bento">
+            <div class="card third">
+                <h3>Enseignes</h3>
+                <p>LED <strong>Blanc Chaud (2700K-3000K)</strong>.</p>
+                <p>Inox poli miroir ou Dibond brossé or.</p>
+            </div>
+            <div class="card third">
+                <h3>Textile</h3>
+                <p>Broderie : Fils métallisés <strong>Madeira</strong>.</p>
+                <p>Flocage : Flex Or Miroir uniquement.</p>
+            </div>
+            <div class="card third">
+                <h3>Papeterie</h3>
+                <p>Papier <strong>Curious Skin Black</strong>.</p>
+                <p>Vernis 3D Relief sur le monogramme "IN".</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="copy">INNER STRASBOURG — OFFICIAL GUIDELINES — 2026</div>
+        <div class="brice-sig">DesignWebUi by Brice JCt.</div>
+    </footer>
+
+</body>
+</html>
